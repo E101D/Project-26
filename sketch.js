@@ -54,38 +54,11 @@ function draw() {
   bob4.display();
   bob5.display();
 
-  push();
-  strokeWeight(3);
-  stroke("blue");
-  line(roof, bob1, -80);
-  pop();
-
-  push();
-  strokeWeight(3);
-  stroke("red");
-  line(roof, bob2, -40);
-  pop();
-
-  push();
-  strokeWeight(3);
-  stroke("yellow");
-  line(roof, bob3, 0);
-  pop();
-
-  push();
-  strokeWeight(3);
-  stroke("orange");
-  line(roof, bob4, 40);
-  pop();
-
-  push();
-  strokeWeight(3);
-  stroke("purple");
-  line(roof, bob5, 80);
-  pop();
-
 
 }
 
-//WRITE A CORRECT CODE TO APPLY A KEYPRESSED TO CHANGE THE POSITION OF BALL OBJECT TO THE LEFT WHEN UP ARROW KEY IS PRESSED
-
+function keyPressed(){
+  if(keyCode === UP_ARROW){
+    Matter.Body.applyForce(bob1.body, bob1.body.position, {x:-50,y:-45})
+  }
+}
